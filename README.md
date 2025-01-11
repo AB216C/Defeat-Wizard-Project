@@ -2,9 +2,9 @@
 
 This game is made of 6 classes including 5 classes such as Warrior, Mage, Archer, Paladin and The_great, and they are all acting as players while the last class is Evilwizard  which is the only one acting as the opponent. 
 
-The main goal of the game is to use either one  in the 5 classes or players to defeat wizard(the opponent)
+The main goal of the game is to use either one  in the 5 classes or players to defeatn the remaining class called wizard(the opponent).
 
-All 6 classes are child classes(subclasses) of the main class(parent class) called "Character": Means, they have ability to use parent class methods such as attack and display_stats and instances(self.name, self.health, self.attack_power,self.max_health)
+All 6 classes are child classes(subclasses) of the main class(parent class) called "Character": Means, they have ability to use parent class methods such as attack and display_stats and attributes such as self.name, self.health, self.attack_power, and self.max_health
 
 **HOW EACH OF THE 5 CHARACTER WINS OR GET DEFEATED BY THE WIZARD:**
 
