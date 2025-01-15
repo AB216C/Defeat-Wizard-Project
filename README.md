@@ -2,9 +2,9 @@
 
 This game is made of 7 classes. 1st Class, Character is a parent class while the remaining 6 classes are child classes(subclasses). All 6 classes inherit methods and attributes from Character class means they can use use both methods and attributes of the parent class at anytime. Parent class methods include attack, heal and dispalay_stats. Parent class attributes include self.name, self.health, self.attack_power,self.max_health.
 
-The game is set up where 5 of 6 classes include Warrior, Mage, Archer, Paladin and The_great , and will be used in the place of a player individually. The remaining class IS called Evilwizard  is the only one acting as the opponent. 
+The game is set up where 5 of 6 classes include Warrior, Mage, Archer, Paladin and The_great , and will be used in the place of a player individually. The remaining class is called Evilwizard,  the only sub-class acting as the opponent. 
 
-The main goal of the game is to how to use either one  in the 5 subclasses or players to defeat/be defeated by the remaining subclass called wizard(the opponent).
+The main goal of the game is to show how to use either one of the 5 subclasses or players to defeat/be defeated by the remaining subclass(the opponent).
 
 
 **HOW EACH OF THE 5 CHARACTER WINS OR GET DEFEATED BY THE WIZARD:**
@@ -15,7 +15,7 @@ The warrior's health is less than wizard's. However, warrior's attack_power is h
 
 Also, using both attack method and speciall ability will defeat wizard faster. Warrior do not need to heal because incase both attack and special ability are used well can defeat wizard. 
 
-Also, incase, warrior use attack method only the entire game, he/she has ability to spy on Wizard's secret only once. Trying to spy twice will lead to getting defeated.
+Also, incase, the Warrior use attack method only the entire game, he/she has ability to spy on Wizard's secret only once. Trying to spy twice will lead to getting defeated.
 
 
 *2. Mage:*
