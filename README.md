@@ -51,4 +51,4 @@ Moreover, my using heal method, palading can spy on wizard's secret at any time 
 
 However, by using special tricks and healing method will eventually defeat the wizard much faster.The game will take longer if he/she try to spy on wizard's secret but as long as both methds are used interchaneably, The_Great will end up winning the game.
 
-To know the game is ended, the defeat message will be displayed by showing wether the player or wizard got deafeated.
+How you know the game is ended, the defeat message will be displayed by showing wether the player or Evil wizard got deafeated.
