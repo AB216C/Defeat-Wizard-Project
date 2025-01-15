@@ -15,18 +15,36 @@ class Character:
         print(f"{self.name} attacks {opponent.name} for {self.attack_power} damage!")
         if opponent.health <= 0:
             print(f"{opponent.name} has been defeated!")
+    def heal(self):
+        self.health += 12
+        print(f"{self.name} regenerates 12 health! Current health: {self.health}")
 
     def display_stats(self):
         print(f"{self.name}'s Stats - Health: {self.health}/{self.max_health}, Attack Power: {self.attack_power}")
 #Warrior class has no special ability but still eligible to use attack and display_stats methods as it inherited them form Character class
 class Warrior(Character):
-    def __init__(self, name):
+    def __init__(self, name, special_ability=15):
         super().__init__(name, health=140, attack_power=25)
-       
+        self.special_ability = special_ability
+
+    def special_tricks(self,opponent):
+        opponent.health -= self.special_ability
+        print(f"{self.name} attacks using poisonous weapon: {self.special_ability} damages")
+        if opponent.health <= 0:
+            print(f"{opponent.name} has been defeated!")
+
+
 #Mage class has no special ability but still eligible to use attack and display_stats methods as it inherited them form Character class
 class Mage(Character):
-    def __init__(self, name):
+    def __init__(self, name, special_ability=20):
          super().__init__(name, health=100, attack_power=35)
+         self.special_ability = special_ability
+
+    def special_tricks(self,opponent):
+        opponent.health -= self.special_ability
+        print(f"{self.name} attacks using long range arrows: {self.special_ability} damages")
+        if opponent.health <= 0:
+            print(f"{opponent.name} has been defeated!")
 
 #Evil Wizard is eligible to use attack and display_stats methods as it inherited them form Character class and has special ability of using  regenerate methods to deafeat
 #players
@@ -38,6 +56,10 @@ class EvilWizard(Character):
     def regenerate(self):
         self.health += 5
         print(f"{self.name} regenerates 5 health! Current health: {self.health}")
+    def heal(self):
+        self.health += 30
+        print(f"{self.name} regenerates 30 health! Current health: {self.health}")
+    
 #Archer is eligible to use attack and display_stats methods as it inherited them form Character class and has special ability of using  special_trics methods to defeat wizard
 class Archer(Character):
      def __init__(self, name,special_ability=45 ):
@@ -45,13 +67,21 @@ class Archer(Character):
         self.special_ability = special_ability
      def special_tricks(self,opponent):
         opponent.health -= self.special_ability
-        print(f"{self.name} attacks using special ability: {self.special_ability} damages")
+        print(f"{self.name} attacks using double arrows quickshots: {self.special_ability} damages")
         if opponent.health <= 0:
             print(f"{opponent.name} has been defeated!")
 #Paladin is eligible to use attack and display_stats methods as it inherited them form Character class and has special ability of using  heal methods to defeat wizard
 class Paladin(Character):
-     def __init__(self, name):
+     def __init__(self, name, special_ability=20):
         super().__init__(name, health=130, attack_power=10)
+        self.special_ability = special_ability
+     
+     def special_tricks(self,opponent):
+        opponent.health -= self.special_ability
+        print(f"{self.name} attacks using Holy strike and Divine shield: {self.special_ability} damages")
+        if opponent.health <= 0:
+            print(f"{opponent.name} has been defeated!")
+
      def heal(self):
         self.health += 40
         print(f"{self.name} regenerates 40 health! Current health: {self.health}")
@@ -61,9 +91,9 @@ class The_Great(Character):
         super().__init__(name, health=100, attack_power=5)
         self.special_weapon = special_weapon
 
-    def special_force(self,opponent):
+    def special_tricks(self,opponent):
         opponent.health -= self.special_weapon
-        print(f"{self.name} attacks using special weapon: {self.special_weapon} damages")
+        print(f"{self.name} attacks using dangerous weapon: {self.special_weapon} damages")
         if opponent.health <= 0:
             print(f"{opponent.name} has been defeated!")
     def heal(self):
@@ -99,9 +129,9 @@ def battle(player, wizard):
     while wizard.health > 0 and player.health > 0:
         print("\n--- Your Turn ---")
         print("1. Attack")
-        print("2. Use Special Ability")
+        print("2. Use Special tricks")
         print("3. Heal")
-        print("4. Special force")
+        print("4. Spy on Wizard secret")
         print("5. View Stats")
 
         choice = input("Choose an action: ")
@@ -113,7 +143,7 @@ def battle(player, wizard):
         elif choice == '3':
             player.heal()
         elif choice == '4':
-            player.special_force(wizard)
+            wizard.heal()
         elif choice == '5':
             player.display_stats()
         else:
